@@ -9,20 +9,29 @@
     font-style: normal;
 }
 
-body{
+.body1{
     background: url(../img/edificios2.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 
+.body{
+    background: url(../img/casa1.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
 .main-section{
     margin: 0 auto;
     margin-top: 30%;
     padding: 0;
 }
 
+.main-section1{
+    margin: 0 auto;
+    margin-top: 20%;
+    padding: 0;
+}
 .modal-content{
     background-color: #3b4652;
-    opacity: .85;
+    opacity: .80;
     padding: 0 20px;
     box-shadow: 0px 0px 3px #848484;
 }
@@ -35,6 +44,8 @@ body{
 .user-img img{
     width: 100px;
     height: 100px;
+    box-shadow: 0px 0px 8px turquoise;
+    border-radius: 50%;
 }
 
 .form-group input{
