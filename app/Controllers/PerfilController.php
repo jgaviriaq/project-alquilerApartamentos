@@ -2,11 +2,11 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class PerfilController extends BaseController
 {
 	public function index()
 	{
-		echo view('home_view');
+		echo view('perfil_view');
 		echo view('layouts/footer');
 	}
 }

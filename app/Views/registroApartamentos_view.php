@@ -13,17 +13,23 @@
 <body class="body2">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url() ?>/public">Register</a>
+            <a class="navbar-brand" href="<?php echo base_url() ?>/public"><i class="fas fa-home"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/login" target="_blank">Login in</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/login" target="_blank">Log in</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/regiterUser" target="_blank">Register user</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/registerApartment" target="_blank">Register Apartment</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/perfil" target="_blank">Perfil</a>
                     </li>
                 </ul>
             </div>
@@ -87,7 +93,7 @@
                             <div class="mb-3">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
-                                        <span class="input-group-text"><i class="fas fa-globe"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-bed"></i></span>
                                         <input type="text" name="numeroHabitacionesApartment" class="form-control" placeholder="Cantidad Habitaciones" required="required">
                                     </div>
                                 </div>
@@ -134,9 +140,9 @@
                         <div class="col-md-6 col-sm-12">
                             <div class="mb-3">
                                 <div class="form-groupApartment">
-                                    <div class="input-group has-validation">
-                                        <span class="input-group-text mb-1" id="span">Reseña Apartamento</span>
-                                        <textarea name="description" cols="50" rows="5"></textarea>
+                                    <div>
+                                        <span class="input-group-text mb-1 " id="span"> <i class="fas fa-home"></i>Reseña del Apartamento</span>
+                                        <textarea class="form-control" name="description" cols="50" rows="5"></textarea>
                                     </div>
                                 </div>
                             </div>

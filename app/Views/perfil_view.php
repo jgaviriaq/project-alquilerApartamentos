@@ -10,7 +10,7 @@
     <title>Alquiler Apartamentos</title>
 </head>
 
-<body class="body1">
+<body class="body3">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?php echo base_url() ?>/public"><i class="fas fa-home"></i></a>
@@ -39,21 +39,36 @@
         <div class="col-sm-8 main-section">
             <div class="modal-content">
                 <div class="col-12 user-img">
-                    <img src="<?php echo base_url(); ?>/public/assets/img/login2.jpg" alt="">
+                    <img src="<?php echo base_url(); ?>/public/assets/img/avatar4.png" alt="">
+                    <br>
                 </div>
                 <form class="col-12">
                     <div class="mb-3">
                         <div class="form-group">
                             <label class="icon">U</label>
-                            <input type="email" name="usuario" class="form-control" placeholder="Ingrese el email" required="required">
+                            <input type="text" name="nombre_perfil" class="form-control" placeholder="Ingrese el nombre" required="required">
                         </div>
                     </div>
+
                     <div class="mb-3">
                         <div class="form-group">
-                            <label class="icon">w</label>
-                            <input type="password" name="password" class="form-control" placeholder="Contraseña" required="required">
+                            <label class="icon"><i class="fas fa-building"></i></label>
+                            <input type="text" name="city_perfil" class="form-control" placeholder="Ingrese Ciudad" required="required">
                         </div>
                     </div>
+
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label class="icon">a</i></label>
+                            <input type="text" name="foto_perfil" class="form-control" placeholder="Ingrese foto" required="required">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="input-group-text mb-1" id="span1">Reseña Propietario</span>
+                        <textarea class="form-control" name="reseña_apart" rows="3"></textarea>
+                    </div>
+
                     <div class="mb-3">
                         <button type="submit" name="btnRegistrar" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Ingresar</button>
                     </div>

@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class registroApartamentosController extends BaseController
+class RegistroApartamentosController extends BaseController
 {
 	public function index()
 	{

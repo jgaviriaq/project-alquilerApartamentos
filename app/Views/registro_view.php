@@ -37,6 +37,12 @@
                         </div>
                     </div>
                     <div class="mb-3">
+                        <div class="form-group">
+                            <label class="icon">Q</label>
+                            <input type="text" name="rol" class="form-control" placeholder="Ingrese el tipo de rol" required="required">
+                        </div>
+                    </div>
+                    <div class="mb-3">
                         <button type="submit" name="btnRegistrar" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Registrar</button>
                     </div>
                 </form>
