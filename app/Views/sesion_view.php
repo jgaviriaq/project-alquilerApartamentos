@@ -41,24 +41,31 @@
                 <div class="col-12 user-img">
                     <img src="<?php echo base_url(); ?>/public/assets/img/login2.jpg" alt="">
                 </div>
-                <form class="col-12">
-                    <div class="mb-3">
+                <form class="col-12" onsubmit="return validar();" action="registrar.php" method="pos">
+                    <div class="mb-3" id="grupo_email">
                         <div class="form-group">
                             <label class="icon">U</label>
-                            <input type="email" name="usuario" class="form-control" placeholder="Ingrese el email" required="required">
+                            <input type="text" name="email" id="email" class="form-control" placeholder="Ingrese el email">
                         </div>
+                        <p class="input_error">El correo solo puede contener letras, números, puntos, y guiones</p>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="grupo_password">
                         <div class="form-group">
                             <label class="icon">w</label>
-                            <input type="password" name="password" class="form-control" placeholder="Contraseña" required="required">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
                         </div>
+                        <p class="input_error">La contraseña debe ser mayor a 8 digitos y menor a 12</p>
                     </div>
+
+                    <div class="formulario_mensaje" id="formulario_mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Digite todos los campos</p>
+                    </div>
+
                     <div class="mb-3">
                         <button type="submit" name="btnRegistrar" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Ingresar</button>
                     </div>
                 </form>
             </div>
         </div>
-
     </div>
+    

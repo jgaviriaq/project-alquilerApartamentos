@@ -42,33 +42,42 @@
                     <img src="<?php echo base_url(); ?>/public/assets/img/avatar4.png" alt="">
                     <br>
                 </div>
-                <form class="col-12">
-                    <div class="mb-3">
+                <form class="col-12" onsubmit="return validarPerfil();" action="registrar1.php" method="pos">
+                    <div class="mb-3" id="grupoNombre">
                         <div class="form-group">
                             <label class="icon">U</label>
-                            <input type="text" name="nombre_perfil" class="form-control" placeholder="Ingrese el nombre" required="required">
+                            <input type="text" name="profileName" id="profileName" class="form-control" placeholder="Ingrese el nombre">
                         </div>
+                        <p class="input_error">El nombre solo debe tener letras y no ser mayor a 20 caracteres</p>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3" id="grupoCiudad">
                         <div class="form-group">
                             <label class="icon"><i class="fas fa-building"></i></label>
-                            <input type="text" name="city_perfil" class="form-control" placeholder="Ingrese Ciudad" required="required">
+                            <input type="text" name="profileCity" id="profileCity" class="form-control" placeholder="Ingrese Ciudad">
                         </div>
+                        <p class="input_error">La ciudad solo debe tener letras y no ser mayor a 20 caracteres</p>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3" id="grupoFoto">
                         <div class="form-group">
                             <label class="icon">a</i></label>
-                            <input type="text" name="foto_perfil" class="form-control" placeholder="Ingrese foto" required="required">
+                            <input type="text" name="profileImage" id="profileImage" class="form-control" placeholder="Ingrese foto">
                         </div>
+                        <p class="input_error">No es una URL válida</p>
                     </div>
 
-                    <div class="mb-3">
-                        <span class="input-group-text mb-1" id="span1">Reseña Propietario</span>
-                        <textarea class="form-control" name="reseña_apart" rows="3"></textarea>
-                    </div>
+                    <div class="mb-3" id="grupoReseña">
+                        <span class="input-group-text mb-2" id="span1">Reseña Propietario</span>
+                        <textarea class="form-control" name="descriptionLessor" id="descriptionLessor" rows="3"></textarea>
+                        <p class="input_error">No debe superar más de 500 caracteres</p>
 
+                    </div>
+                   
+                    <div class="formulario_mensaje" id="formulario_mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Digite todos los campos</p>
+                    </div>
+                   
                     <div class="mb-3">
                         <button type="submit" name="btnRegistrar" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Ingresar</button>
                     </div>

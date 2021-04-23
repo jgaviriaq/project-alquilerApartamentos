@@ -41,37 +41,40 @@
                 <div class="col-12 user-img">
                     <img src="<?php echo base_url(); ?>/public/assets/img/apartment.png" alt="">
                 </div>
-                <form class="col-12">
+                <form class="col-12" onsubmit="return validarApartamento();" action="registrar1.php" method="pos">
                     <div class="row">
                         <div class="col-md-4 col-sm-12">
-                            <div class="mb-3">
+                            <div class="mb-3" id="grupocity">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
                                         <span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-building"></i></span>
-                                        <input type="text" name="cityApartment" class="form-control" placeholder="Digite Ciudad" required="required">
+                                        <input type="text" name="cityApartment" id="cityApartment" class="form-control" placeholder="Digite Ciudad">
                                     </div>
+                                    <p class="input_error">La ciudad solo debe tener letras y no ser mayor a 20 caracteres</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-4 col-sm-12">
-                            <div class="mb-3">
+                            <div class="mb-3" id="grupocountry">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
                                         <span class="input-group-text"><i class="fas fa-globe"></i></span>
-                                        <input type="text" name="countryApartment" class="form-control" placeholder="Digite País" required="required">
+                                        <input type="text" name="countryApartment" id="countryApartment" class="form-control" placeholder="Digite País">
                                     </div>
+                                    <p class="input_error">El país solo debe tener letras y no ser mayor a 15 caracteres</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-4 col-sm-12">
-                            <div class="mb-3">
+                            <div class="mb-3" id="grupoDireccion">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
                                         <span class="input-group-text"><i class="fas fa-map-marker"></i></span>
-                                        <input type="text" name="countryApartment" class="form-control" placeholder="Digite dirección" required="required">
+                                        <input type="text" name="addressApartment" id="addressApartment" class="form-control" placeholder="Digite dirección">
                                     </div>
+                                    <p class="input_error">La dirección no debe tener mas de 20 caracteres</p>
                                 </div>
                             </div>
                         </div>
@@ -79,33 +82,36 @@
 
                     <div class="row">
                         <div class="col-md-4 col-sm-12">
-                            <div class="mb-3">
+                            <div class="mb-3" id="grupoUbicacion">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
                                         <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-                                        <input type="text" name="ubicacionApartment" class="form-control" placeholder="Ubicación Google" required="required">
+                                        <input type="text" name="ubicacionApartment" id="ubicacionApartment" class="form-control" placeholder="Ubicación Google">
                                     </div>
+                                    <p class="input_error"> No corresponde a una dirección URL válida</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-4 col-sm-12">
-                            <div class="mb-3">
+                            <div class="mb-3" id="grupoHabitaciones">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
                                         <span class="input-group-text"><i class="fas fa-bed"></i></span>
-                                        <input type="text" name="numeroHabitacionesApartment" class="form-control" placeholder="Cantidad Habitaciones" required="required">
+                                        <input type="text" name="numberRoomsApartment" id="numberRoomsApartment" class="form-control" placeholder="Cantidad Habitaciones">
                                     </div>
+                                    <p class="input_error">Solo digite numeros, los caracteres no pueden ser mayor a 10 </p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-4 col-sm-12">
-                            <div class="mb-3">
+                            <div class="mb-3" id="grupoImagenes">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
                                         <span class="input-group-text"><i class="far fa-images"></i></span>
-                                        <input type="text" name="iamgenesApartment" class="form-control" placeholder="Imagenes Apartamento" required="required">
+                                        <input type="text" name="imagesApartment" id="imagesApartment" class="form-control" placeholder="Imagenes Apartamento">
+                                        <p class="input_error"> No corresponde a una dirección URL válida</p>
                                     </div>
                                 </div>
                             </div>
@@ -114,23 +120,25 @@
 
                     <div class="row justify-content-center">
                         <div class="col-md-4 col-sm-12">
-                            <div class="mb-3">
+                            <div class="mb-3" id="grupoImagenDestacada">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
-                                        <span class="input-group-text" ><i class="fas fa-camera"></i></span>
-                                        <input type="text" name="imagenDestacadaApartment" class="form-control" placeholder="Imagen Destacada" required="required">
+                                        <span class="input-group-text"><i class="fas fa-camera"></i></span>
+                                        <input type="text" name="featuredImagesApartment" id="featuredImagesApartment" class="form-control" placeholder="Imagen Destacada">
                                     </div>
+                                    <p class="input_error"> No corresponde a una dirección URL válida</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-4 col-sm-12">
-                            <div class="mb-3">
+                            <div class="mb-3" id="grupoValorNoche">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
-                                        <span class="input-group-text"><i class="fas fa-moon"></i></span>
-                                        <input type="text" name="valorNocheApartment" class="form-control" placeholder="Valor Noche" required="required">
+                                        <span class="input-group-text" ><i class="fas fa-moon"></i></span>
+                                        <input  type="text" name="nightValueApartment" id="nightValueApartment" class="form-control " placeholder="Valor Noche">
                                     </div>
+                                    <p class="input_error">Solo digite numeros, los caracteres no pueden ser mayor a 10</p>
                                 </div>
                             </div>
                         </div>
@@ -138,15 +146,20 @@
 
                     <div class="row justify-content-center">
                         <div class="col-md-6 col-sm-12">
-                            <div class="mb-3">
+                            <div class="mb-3" id="grupoReseñaApartamento">
                                 <div class="form-groupApartment">
                                     <div>
                                         <span class="input-group-text mb-1 " id="span"> <i class="fas fa-home"></i>Reseña del Apartamento</span>
-                                        <textarea class="form-control" name="description" cols="50" rows="5"></textarea>
+                                        <textarea class="form-control" name="descriptionApartment" id="descriptionApartment" cols="50" rows="5"></textarea>
                                     </div>
+                                    <p class="input_error">No puede escribir mas de 500 caracteres</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="formulario_mensaje" id="formulario_mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Digite todos los campos</p>
                     </div>
 
                     <div class="mb-3">
