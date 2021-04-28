@@ -31,6 +31,12 @@
                     <li class="nav-item ">
                         <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/perfil" target="_blank">Perfil</a>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/users" target="_blank">Users List</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/apartments" target="_blank">Apartments List</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -42,7 +48,7 @@
                     <img src="<?php echo base_url(); ?>/public/assets/img/avatar4.png" alt="">
                     <br>
                 </div>
-                <form class="col-12" onsubmit="return validarPerfil();" action="registrar1.php" method="pos">
+                <form class="col-12" onsubmit="return validarPerfil();" action=" " method="POST" >
                     <div class="mb-3" id="grupoNombre">
                         <div class="form-group">
                             <label class="icon">U</label>

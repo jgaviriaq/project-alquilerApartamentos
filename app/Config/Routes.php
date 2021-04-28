@@ -35,7 +35,11 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'SesionController::index');
 $routes->get('/regiterUser', 'RegisterUsuariosController::index');
-$routes->get('/registerApartment', 'registroApartamentosController::index');
+$routes->get('/users', 'UsersController::index');
+$routes->POST('/listUsers', 'RegisterUsuariosController::listUsers');
+$routes->get('/registerApartment', 'RegistroApartamentosController::index');
+$routes->get('/apartments', 'ListApartmentsController::index');
+$routes->POST('/listApartments', 'RegistroApartamentosController::listApartments');
 $routes->get('/perfil', 'PerfilController::index');
 /*
  * --------------------------------------------------------------------

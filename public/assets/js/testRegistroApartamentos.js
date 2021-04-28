@@ -93,7 +93,7 @@ function validarApartamento() {
     }
 
 
-    if (descriptionApartment.length > 500) {
+    if (descriptionApartment.length > 700) {
         document.querySelector('#grupoReseñaApartamento .input_error').classList.add('input_error-activo');
         return false
     }

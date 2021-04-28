@@ -4,7 +4,7 @@
             <div class="col-12 user-img">
                 <img src="<?php echo base_url(); ?>/public/assets/img/avatar1.jpg" alt="">
             </div>
-            <form class="col-12" onsubmit="return validarUser();" action="registrar1.php" method="pos">
+            <form  action="<?php echo base_Url();?>/public/listUsers" method="POST"  class="col-12" onsubmit="return validarUser();">
                 <div class="mb-3" id="grupouser">
                     <div class="form-group">
                         <label class="icon">U</label>
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <button type="submit" name="btnRegistrar" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Registrar</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Registrar</button>
                 </div>
             </form>
         </div>

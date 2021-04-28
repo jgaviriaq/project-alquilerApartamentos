@@ -31,6 +31,12 @@
                     <li class="nav-item ">
                         <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/perfil" target="_blank">Perfil</a>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/users" target="_blank">Users List</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/apartments" target="_blank">Apartments List</a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -31,6 +31,12 @@
                     <li class="nav-item ">
                         <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/perfil" target="_blank">Perfil</a>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/users" target="_blank">Users List</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/apartments" target="_blank">Apartments List</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -38,10 +44,10 @@
     <div class="modal-dialog modal-lg text-center">
         <div class="col-sm-12 main-sectionApartment">
             <div class="modal-content">
-                <div class="col-12 user-img">
+                <div class="col-12 user-img mt-0">
                     <img src="<?php echo base_url(); ?>/public/assets/img/apartment.png" alt="">
                 </div>
-                <form class="col-12" onsubmit="return validarApartamento();" action="registrar1.php" method="pos">
+                <form id="formulario" class="col-12" onsubmit="return validarApartamento();" action="<?php echo base_Url();?>/public/listApartments" method="POST">
                     <div class="row">
                         <div class="col-md-4 col-sm-12">
                             <div class="mb-3" id="grupocity">
@@ -98,7 +104,7 @@
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
                                         <span class="input-group-text"><i class="fas fa-bed"></i></span>
-                                        <input type="text" name="numberRoomsApartment" id="numberRoomsApartment" class="form-control" placeholder="Cantidad Habitaciones">
+                                        <input type="text" name="numberRoomsApartment" id="numberRoomsApartment" class="form-control" placeholder="Num Cuartos">
                                     </div>
                                     <p class="input_error">Solo digite numeros, los caracteres no pueden ser mayor a 10 </p>
                                 </div>
@@ -110,7 +116,7 @@
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
                                         <span class="input-group-text"><i class="far fa-images"></i></span>
-                                        <input type="text" name="imagesApartment" id="imagesApartment" class="form-control" placeholder="Imagenes Apartamento">
+                                        <input type="text" name="imagesApartment" id="imagesApartment" class="form-control" placeholder="Imagen Apart.">
                                         <p class="input_error"> No corresponde a una dirección URL válida</p>
                                     </div>
                                 </div>
@@ -124,7 +130,7 @@
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
                                         <span class="input-group-text"><i class="fas fa-camera"></i></span>
-                                        <input type="text" name="featuredImagesApartment" id="featuredImagesApartment" class="form-control" placeholder="Imagen Destacada">
+                                        <input type="text" name="featuredImagesApartment" id="featuredImagesApartment" class="form-control" placeholder="Imagen Principal">
                                     </div>
                                     <p class="input_error"> No corresponde a una dirección URL válida</p>
                                 </div>

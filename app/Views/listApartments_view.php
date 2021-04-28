@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>/public/assets/css/styless.css" />
-    <title>Alquiler Apartamentos</title>
+    <title>Alquier Apartamentos</title>
 </head>
 
-<body class="body1">
+<body class="body5">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?php echo base_url() ?>/public"><i class="fas fa-home"></i></a>
@@ -41,36 +41,44 @@
             </div>
         </div>
     </nav>
-    <div class="modal-dialog text-center">
-        <div class="col-sm-8 col-md-8 col-lg-10 main-section">
-            <div class="modal-content ">
-                <div class="col-12 user-img">
-                    <img src="<?php echo base_url(); ?>/public/assets/img/login2.jpg" alt="">
-                </div>
-                <form class="col-12" onsubmit="return validar();" action="" method="POST">
-                    <div class="mb-3" id="grupo_email">
-                        <div class="form-group">
-                            <label class="icon">U</label>
-                            <input type="text" name="email" id="email" class="form-control" placeholder="Ingrese el email">
-                        </div>
-                        <p class="input_error">El correo solo puede contener letras, números, puntos, y guiones</p>
-                    </div>
-                    <div class="mb-3" id="grupo_password">
-                        <div class="form-group">
-                            <label class="icon">w</label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
-                        </div>
-                        <p class="input_error">La contraseña debe ser mayor a 8 digitos y menor a 12</p>
-                    </div>
-
-                    <div class="formulario_mensaje" id="formulario_mensaje">
-                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Digite todos los campos</p>
-                    </div>
-
-                    <div class="mb-3">
-                        <button type="submit" name="btnRegistrar" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Ingresar</button>
-                    </div>
-                </form>
-            </div>
+    <div class="row justify-content-center">
+        <div id="title" class="col-md-7">
+            <h1 id="h1">Lista de Apartamentos</h1>
         </div>
-    </div>
+        <?php
+        foreach ($registerApartment as $item) {
+            $template = "
+    <div class='col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center mt-2 '>    
+            <div class='card mt-2 me-2' style='width: 26rem; border-color:turquoise; border-width:2px'>
+                <img src='{$item->outstandingimage}' class='card-img-top' alt='...'>
+                <div class='card-body bg-dark'>
+                    <div class='row g-0'>
+                        <div class='col-md-6 d-flex justify-content-center'>
+                            <img style='width: 12rem;' src='{$item->imagesapartment}' class='card-img-top m-0' alt='...'>
+                        </div>
+                         <div class='col-md-6 '>
+                            <div class='row g-0'>    
+                                <div class='col-md-12 listapartments'>
+                                <h6 class='card-text d-flex justify-content-center mt-1'>Pais: {$item->countryapartment}</h6>
+                                <h6 class='card-text d-flex justify-content-center '>Ciudad: {$item->cityapartment}</h6>
+                                <h6 class='card-text d-flex justify-content-center '>Dirección: {$item->addressapartment}</h6>
+                                <h6 class='card-text d-flex justify-content-center '>Habitaciones: {$item->numberrooms}</h6>
+                                <h6 class='card-text d-flex justify-content-center '>Valor Noche: {$item->nightvalue}</h6>
+                                <h6 class='card-text d-flex justify-content-center '><a href='{$item->urlgoogle}'  target='_blank'>Ubicación Google Maps</a></h6>
+                            </div>
+                          </div>
+                        </div> 
+                        <div class='card-body listapartments'>
+                        <h6 class='card-title d-flex justify-content-center'>Descripción:</h6>
+                        <p id='description' class='card-text'>{$item->descriptionapartment}</p>
+                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                      </div>
+                    </div> 
+                </div>
+            </div>
+      </div>     ";
+            echo $template;
+        }
+        ?>
+
+    
