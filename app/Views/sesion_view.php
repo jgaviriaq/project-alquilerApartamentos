@@ -11,43 +11,14 @@
 </head>
 
 <body class="body1">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url() ?>/public"><i class="fas fa-home"></i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/login" target="_blank">Log in</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/regiterUser" target="_blank">Register user</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/registerApartment" target="_blank">Register Apartment</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/perfil" target="_blank">Perfil</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/users" target="_blank">Users List</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/apartments" target="_blank">Apartments List</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
     <div class="modal-dialog text-center">
         <div class="col-sm-8 col-md-8 col-lg-10 main-section">
             <div class="modal-content ">
                 <div class="col-12 user-img">
                     <img src="<?php echo base_url(); ?>/public/assets/img/login2.jpg" alt="">
                 </div>
-                <form class="col-12" onsubmit="return validar();" action="" method="POST">
+                <form class="col-12" onsubmit="return validar();" action="<?php echo base_Url() . '/public/sesion' ?>" method="POST">
                     <div class="mb-3" id="grupo_email">
                         <div class="form-group">
                             <label class="icon">U</label>
@@ -70,6 +41,7 @@
                     <div class="mb-3">
                         <button type="submit" name="btnRegistrar" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Ingresar</button>
                     </div>
+                    <a id="link" href="<?php echo base_url(); ?>/public/regiterUser">Registrarse</a>
                 </form>
             </div>
         </div>

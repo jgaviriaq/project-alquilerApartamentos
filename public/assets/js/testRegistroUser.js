@@ -6,10 +6,11 @@ function validarUser() {
     countryuser = document.getElementById("countryuser").value;
     cityuser = document.getElementById("cityuser").value;
     passworduser = document.getElementById("passworduser").value;
-    roluser = document.getElementById("roluser").value;
+    roluser = document.forms["formulario"]["roluser"].selectedIndex;
     expresion_correo = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.+[a-zA-Z0-9-.]+$/;
+    expresion_nombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
 
-    if (user == "" || emailuser == "" || countryuser == "" || cityuser == "" || passworduser == "" || roluser == "") {
+    if (user == "" || emailuser == "" || countryuser ==  "" || cityuser == "" || passworduser ==  "" || roluser ==  "") {
         document.querySelector('#formulario_mensaje ').classList.add('formulario_mensaje-activo');
         return false
     }
@@ -18,7 +19,7 @@ function validarUser() {
     }
 
 
-    if (numero(user) || user.length > 20) {
+    if (!expresion_nombre.test(user) || user.length > 20) {
         document.querySelector('#grupouser .input_error').classList.add('input_error-activo');
         return false
     }
@@ -36,7 +37,7 @@ function validarUser() {
     }
 
 
-    if (numero(countryuser)|| countryuser.length > 20) {
+    if (!expresion_nombre.test(countryuser)|| countryuser.length > 20) {
         document.querySelector('#grupocountryuser .input_error').classList.add('input_error-activo');
         return false
     }
@@ -45,7 +46,7 @@ function validarUser() {
     }
 
 
-    if (numero(cityuser)|| cityuser.length > 20) {
+    if (!expresion_nombre.test(cityuser)|| cityuser.length > 20) {
         document.querySelector('#grupocityuser .input_error').classList.add('input_error-activo');
         return false
     }
@@ -62,7 +63,7 @@ function validarUser() {
         document.querySelector('#grupopassworduser .input_error').classList.remove('input_error-activo');
     }
 
-    if (numero(roluser) || roluser.length > 20) {
+    if (roluser== 0) {
         document.querySelector('#gruporoluser .input_error').classList.add('input_error-activo');
         return false
     }
@@ -75,22 +76,22 @@ function validarUser() {
 }
 
 
-function numero(user) {
-    let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,'$','!','#','%','&','(',')','?','¡','¿','<','>',';','*','+','~','[',']',':','_','-','^','/','°','|','{','}','.','`','"',"'"]
-    let sw = false;
-    for (let i = 0; i < numbers.length; i++) {
-        for (let j = 0; j < user.length; j++) {
-            if (numbers[i] == user[j]) {
-                sw = true;
-                break;
-            }
-        }
-        if (sw) {
-            break
-        }
-    }
-    return sw;
-}
+// function numero(user) {
+//     let numbers = [0,1,2,3,4,5,6,7,8,9,'$','!','#','%','&','(',')','?','¡','¿','<','>',';','*','+','~','[',']',':','_','-','^','/','°','|','{','}','.','`','"',"'"]
+//     let sw = false;
+//     for (let i = 0; i < numbers.length; i++) {
+//         for (let j = 0; j < user.length; j++) {
+//             if (numbers[i] == user[j]) {
+//                 sw = true;
+//                 break;
+//             }
+//         }
+//         if (sw) {
+//             break
+//         }
+//     }
+//     return sw;
+// }
 
 
 

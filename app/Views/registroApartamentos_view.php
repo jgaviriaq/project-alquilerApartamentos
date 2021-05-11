@@ -13,29 +13,26 @@
 <body class="body2">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url() ?>/public"><i class="fas fa-home"></i></a>
+            <a class="navbar-brand" href="<?php echo base_url() ?>/public/home"><i class="fas fa-home"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/login" target="_blank">Log in</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/login">Log in</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/regiterUser" target="_blank">Register user</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/registerApartment">Register Apartment</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/registerApartment" target="_blank">Register Apartment</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/perfil">Perfil</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/perfil" target="_blank">Perfil</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/apartments">Apartments List</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/users" target="_blank">Users List</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/apartments" target="_blank">Apartments List</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/salir">Salir</a>
                     </li>
                 </ul>
             </div>
@@ -47,7 +44,7 @@
                 <div class="col-12 user-img mt-0">
                     <img src="<?php echo base_url(); ?>/public/assets/img/apartment.png" alt="">
                 </div>
-                <form id="formulario" class="col-12" onsubmit="return validarApartamento();" action="<?php echo base_Url();?>/public/listApartments" method="POST">
+                <form id="formulario" class="col-12" onsubmit="return validarApartamento();" action="<?php echo base_Url(); ?>/public/listApartments" method="POST">
                     <div class="row">
                         <div class="col-md-4 col-sm-12">
                             <div class="mb-3" id="grupocity">
@@ -141,8 +138,8 @@
                             <div class="mb-3" id="grupoValorNoche">
                                 <div class="form-groupApartment">
                                     <div class="input-group has-validation">
-                                        <span class="input-group-text" ><i class="fas fa-moon"></i></span>
-                                        <input  type="text" name="nightValueApartment" id="nightValueApartment" class="form-control " placeholder="Valor Noche">
+                                        <span class="input-group-text"><i class="fas fa-moon"></i></span>
+                                        <input type="text" name="nightValueApartment" id="nightValueApartment" class="form-control " placeholder="Valor Noche">
                                     </div>
                                     <p class="input_error">Solo digite numeros, los caracteres no pueden ser mayor a 10</p>
                                 </div>

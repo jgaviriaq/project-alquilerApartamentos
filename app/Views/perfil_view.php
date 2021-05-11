@@ -11,84 +11,90 @@
 </head>
 
 <body class="body3">
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo base_url() ?>/public"><i class="fas fa-home"></i></a>
+            <a class="navbar-brand" href="<?php echo base_url() ?>/public/home"><i class="fas fa-home"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/login" target="_blank">Log in</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/login">Log in</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/regiterUser" target="_blank">Register user</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/registerApartment">Register Apartment</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/registerApartment" target="_blank">Register Apartment</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/perfil">Perfil</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/perfil" target="_blank">Perfil</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/apartments">Apartments List</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/users" target="_blank">Users List</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/apartments" target="_blank">Apartments List</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/salir">Salir</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="modal-dialog text-center">
-        <div class="col-sm-8 main-section">
-            <div class="modal-content">
-                <div class="col-12 user-img">
-                    <img src="<?php echo base_url(); ?>/public/assets/img/avatar4.png" alt="">
+
+    <?php
+
+    foreach ($Perfil as $item) {
+        $update = base_url() . "/public/updatePerfil?id={$item->id}";
+        $Template = "
+    <div class='modal-dialog text-center'>
+        <div class='col-sm-8 main-section'>
+            <div class='modal-content'>
+                <div class='col-12 user-img'>
+                    <img src='{$item->image}' alt=''>
                     <br>
                 </div>
-                <form class="col-12" onsubmit="return validarPerfil();" action=" " method="POST" >
-                    <div class="mb-3" id="grupoNombre">
-                        <div class="form-group">
-                            <label class="icon">U</label>
-                            <input type="text" name="profileName" id="profileName" class="form-control" placeholder="Ingrese el nombre">
+                <form class='col-12' onsubmit='return validarPerfil();' action= '{$update}' method='POST' >
+                    <div class='mb-3' id='grupoNombre'>
+                        <div class='form-group'>
+                            <label class='icon'>U</label>
+                            <input type='text' name='nameUser' id='profileName' class='form-control' value='{$item->nameUser}'>
                         </div>
-                        <p class="input_error">El nombre solo debe tener letras y no ser mayor a 20 caracteres</p>
+                        <p class='input_error'>El nombre solo debe tener letras y no ser mayor a 20 caracteres</p>
                     </div>
 
-                    <div class="mb-3" id="grupoCiudad">
-                        <div class="form-group">
-                            <label class="icon"><i class="fas fa-building"></i></label>
-                            <input type="text" name="profileCity" id="profileCity" class="form-control" placeholder="Ingrese Ciudad">
+                    <div class='mb-3' id='grupoCiudad'>
+                        <div class='form-group'>
+                            <label class='icon'><i class='fas fa-building'></i></label>
+                            <input type='text' name='cityUser' id='profileCity' class='form-control' value='{$item->cityUser}'Ingrese Ciudad'>
                         </div>
-                        <p class="input_error">La ciudad solo debe tener letras y no ser mayor a 20 caracteres</p>
+                        <p class='input_error'>La ciudad solo debe tener letras y no ser mayor a 20 caracteres</p>
                     </div>
 
-                    <div class="mb-3" id="grupoFoto">
-                        <div class="form-group">
-                            <label class="icon">a</i></label>
-                            <input type="text" name="profileImage" id="profileImage" class="form-control" placeholder="Ingrese foto">
+                    <div class='mb-3' id='grupoFoto'>
+                        <div class='form-group'>
+                            <label class='icon'>a</i></label>
+                            <input type='text' name='image' id='profileImage' class='form-control' value='{$item->image}' placeholder='Ingrese foto'>
                         </div>
-                        <p class="input_error">No es una URL válida</p>
+                        <p class='input_error'>No es una URL válida</p>
                     </div>
 
-                    <div class="mb-3" id="grupoReseña">
-                        <span class="input-group-text mb-2" id="span1">Reseña Propietario</span>
-                        <textarea class="form-control" name="descriptionLessor" id="descriptionLessor" rows="3"></textarea>
-                        <p class="input_error">No debe superar más de 500 caracteres</p>
+                    <div class='mb-3' id='grupoReseña'>
+                        <span class='input-group-text mb-2' id='span1'>Reseña Propietario</span>
+                        <textarea class='form-control' name='description' id='descriptionLessor' <p>{$item->description}</textarea>
+                        <p class='input_error'>No debe superar más de 500 caracteres</p>
 
                     </div>
                    
-                    <div class="formulario_mensaje" id="formulario_mensaje">
-                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Digite todos los campos</p>
+                    <div class='formulario_mensaje' id='formulario_mensaje'>
+                        <p><i class='fas fa-exclamation-triangle'></i> <b>Error:</b> Digite todos los campos</p>
                     </div>
                    
-                    <div class="mb-3">
-                        <button type="submit" name="btnRegistrar" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Ingresar</button>
+                    <div class='mb-3'>
+                    <button id='submit'type='submit' class='btn btn-info' name='botonEditar'>Actualizar Perfil</button>
                     </div>
                 </form>
             </div>
         </div>
-
-    </div>
+    </div>";
+        echo $Template;
+    }
+    ?>

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use mysqli;
 
 class RegistroModel extends Model
 {
@@ -11,9 +12,16 @@ class RegistroModel extends Model
          $this ->db->query($sql);   
         }
 
-    function readUser(){
-        $sql ="SELECT * FROM registeruser";
-        $users = $this->db->query($sql);
-        return $users->getResult();
+    function readApartment(){
+        $sql ="SELECT * FROM registerapartment";
+        $apartment = $this->db->query($sql);
+        return $apartment->getResult();
     }
+
+    function login($email){
+        $sql = "SELECT * FROM registeruser WHERE emailUser='{$email}'";
+        $rol = $this->db->query($sql);
+        return $rol->getResult();
+    }
+
 }

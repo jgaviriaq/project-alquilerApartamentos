@@ -5,6 +5,7 @@
 <script src="<?php echo base_url(); ?>/public/assets/js/testRegistroUser.js"></script>
 <script src="<?php echo base_url(); ?>/public/assets/js/testRegistroApartamentos.js"></script>
 <script src="<?php echo base_url(); ?>/public/assets/js/testPerfil.js"></script>
+<script src="<?php echo base_url(); ?>/public/assets/js/testModel.js"></script>
 </body>
 
 </html>

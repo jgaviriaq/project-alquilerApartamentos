@@ -33,14 +33,22 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/home', 'HomeController::index');
 $routes->get('/login', 'SesionController::index');
+$routes->get('/salir', 'SesionController::salir');
 $routes->get('/regiterUser', 'RegisterUsuariosController::index');
-$routes->get('/users', 'UsersController::index');
+$routes->get('/totalApartments', 'TotalApartmentsController::index');
 $routes->POST('/listUsers', 'RegisterUsuariosController::listUsers');
 $routes->get('/registerApartment', 'RegistroApartamentosController::index');
 $routes->get('/apartments', 'ListApartmentsController::index');
 $routes->POST('/listApartments', 'RegistroApartamentosController::listApartments');
 $routes->get('/perfil', 'PerfilController::index');
+$routes->get('/accesoDenegado', 'RegistroApartamentosController::index');
+$routes->post('/sesion', 'SesionController::sesion');
+$routes->get('/deleteApartment', 'ListApartmentsController::deleteApartment');
+$routes->POST('/updateApartment', 'ListApartmentsController::updateApartment');
+$routes->POST('/updatePerfil', 'PerfilController::updatePerfil');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

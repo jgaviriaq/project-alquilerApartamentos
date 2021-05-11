@@ -4,7 +4,7 @@
             <div class="col-12 user-img">
                 <img src="<?php echo base_url(); ?>/public/assets/img/avatar1.jpg" alt="">
             </div>
-            <form  action="<?php echo base_Url();?>/public/listUsers" method="POST"  class="col-12" onsubmit="return validarUser();">
+            <form name="formulario" action="<?php echo base_Url(); ?>/public/listUsers" method="POST" class="col-12" onsubmit="return validarUser();">
                 <div class="mb-3" id="grupouser">
                     <div class="form-group">
                         <label class="icon">U</label>
@@ -42,9 +42,12 @@
                 </div>
                 <div class="mb-3" id="gruporoluser">
                     <div class="form-group">
-                        <label class="icon">Q</label>
-                        <input type="text" name="roluser" id="roluser" class="form-control" placeholder="Ingrese el tipo de rol">
-                        <p class="input_error">El rol solo debe tener letras y no ser mayor a 20 caracteres</p>
+                       
+                        <select class="form-select" id="roluser" name="roluser" aria-label="Default select example">
+                            <option selected> Seleccione Tipo Rol</option>
+                            <option value="1">Propietario</option>
+                            <option value="2">Invitado</option>
+                        </select>
                     </div>
                 </div>
 

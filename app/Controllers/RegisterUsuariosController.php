@@ -3,18 +3,21 @@
 namespace App\Controllers;
 
 use App\Models\RegistroModel;
-use Prophecy\Doubler\Generator\Node\ReturnTypeNode;
+use phpDocumentor\Reflection\Location;
 
 class RegisterUsuariosController extends BaseController
 {
 	public function index()
 	{
-		echo view('layouts/header');
-		echo view('registro_view');
-		echo view('layouts/footer');
+		$Session = session();
+		$Session->get('email');
+			echo view('layouts/header');
+			echo view('registro_view');
+			echo view('layouts/footer');
+		
 	}
 
-	
+
 	public function listUsers()
 	{
 		$request = \Config\Services::request();
@@ -25,13 +28,21 @@ class RegisterUsuariosController extends BaseController
 		$cityuser = $request->getPost('cityuser');
 		$passworduser = $request->getPost('passworduser');
 		$roluser  = $request->getPost('roluser');
-		$registroModel->addUser($user, $emailuser, $countryuser, $cityuser, $passworduser, $roluser);
-		return redirect()-> to('public/regiterUser') ;
-		
-        if($registroModel){
-			echo("Registro agregado");
-			}else{
-				echo("error");
-			}
+		$datos = base_url() . '/public/regiterUser';
+		$emailRepetidos =$registroModel->login($emailuser);
+		if($emailRepetidos[0]->emailUser !=$emailuser){
+			$registroModel->addUser($user, $emailuser, $countryuser, $cityuser, $passworduser, $roluser);
+		return	redirect()->to($datos);
+		}
+		else{
+			echo view('error_view');
+			echo view('layouts/footer');
+		}
+
+		// if ($registroModel) {
+		// 	echo ("Registro agregado");
+		// } else {
+		// 	echo ("error");
+		// }
 	}
 }
