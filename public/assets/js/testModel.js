@@ -1,6 +1,6 @@
 
 function validarApartamento1() {
-    let cityApartment, countryApartment, addressApartment, ubicacionApartment, numberRoomsApartment, imagesApartment, featuredImagesApartment, nightValueApartment, descriptionApartment, urlregex;
+    let cityApartment, countryApartment, addressApartment, imagesapartment, numberRoomsApartment,outstandingimage, nightValueApartment, descriptionApartment, urlregex;
     
     countryApartment = document.getElementById("countryApartment").value;
     cityApartment = document.getElementById("cityApartment").value;
@@ -8,7 +8,10 @@ function validarApartamento1() {
     numberRoomsApartment = document.getElementById("numberRoomsApartment").value;
     nightValueApartment = document.getElementById("nightValueApartment").value;
     descriptionApartment = document.getElementById("descriptionApartment").value;
+    outstandingimage = document.getElementById("outstandingimage").value;
+    imagesapartment = document.getElementById("imagesapartment").value;
     expresion_nombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
+    urlregex = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
 
     
 
@@ -70,6 +73,22 @@ function validarApartamento1() {
     }
     else {
         document.querySelector('#grupoReseñaApartamento .input_error').classList.remove('input_error-activo');
+    }
+
+    if (!urlregex.test(outstandingimage)) {
+        document.querySelector('#grupoImagenes .input_error').classList.add('input_error-activo');
+        return false
+    }
+    else {
+        document.querySelector('#grupoImagenes .input_error').classList.remove('input_error-activo');
+    }
+
+    if (!urlregex.test(imagesapartment)) {
+        document.querySelector('#grupoImagen .input_error').classList.add('input_error-activo');
+        return false
+    }
+    else {
+        document.querySelector('#grupoImagenes .input_error').classList.remove('input_error-activo');
     }
 
 }

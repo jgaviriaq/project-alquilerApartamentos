@@ -87,13 +87,13 @@
       </div>    
       <div class='modal fade ' id='editar{$item->id}' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
          <div class='modal-dialog'>
-            <div class='modal-content cont bg-dark text-info '>
+            <div class='modal-content cont bg-dark text-white'>
                     <div class='modal-header'>
                         <h5 class='modal-title ' id='exampleModalLabel'>Date Apartment</h5>
                         <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                     </div>
             <div class='modal-body'>
-                    <form onsubmit='' action='{$update}'  method='POST'>
+                    <form onsubmit='return validarApartamento1();' action='{$update}'  method='POST'>
                             <div id='grupocountry'>
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
@@ -146,23 +146,23 @@
                                 </div>
                             </div>
                         
-                            <div class='mt-3' id='grupoValorNoche'>
+                            <div class='mt-3' id='grupoImagenes'>
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
                                       <span class='input-group-text'><i class='far fa-images'></i></span>
                                         <input  type='text' name='outstandingimage' id='outstandingimage'  value='{$item->outstandingimage}' class='form-control '>
                                     </div>
-                                    <p class='input_error'>Solo digite numeros, los caracteres no pueden ser mayor a 10</p>
+                                    <p class='input_error'>No es un formato de URL</p>
                                 </div>
                             </div> 
                             
-                              <div class='mt-3' id='grupoValorNoche'>
+                              <div class='mt-3' id='grupoImagen'>
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
                                       <span class='input-group-text'><i class='far fa-images'></i></span>
                                         <input  type='text' name='imagesapartment' id='imagesapartment'  value='{$item->imagesapartment}' class='form-control '>
                                     </div>
-                                    <p class='input_error'>Solo digite numeros, los caracteres no pueden ser mayor a 10</p>
+                                    <p class='input_error'>No es un formato de URL</p>
                                 </div>
                             </div> 
 
