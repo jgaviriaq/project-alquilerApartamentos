@@ -28,11 +28,12 @@
             </div>
         </div>
     </nav>
-
+<div class="container-fluid">
     <div class="row">
         <h1 id="h1">Listado de Apartamentos</h1>
         <?php
         foreach ($registerapartment as $item) {
+            $route = base_url() . "/public/propietario?id={$item->id}";
             $template = "
         <div class='col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center mt-2 '>    
             <div class='card mt-2 me-2' style='width:24rem; border-color:turquoise; border-width:2px'>
@@ -64,8 +65,12 @@
                    </div> 
 
                    <div class='row g-0 mt-1'>
-                        <div class='col-md-12 d-flex justify-content-center apartments '>
+                        <div class='col-md-6 d-flex justify-content-center apartments mb-2'>
                             <h6 class='card-text d-flex justify-content-center'><a href='{$item->urlgoogle}'  target='_blank'>Ubicación Google Maps</a></h6>                           
+                        </div> 
+
+                        <div class='col-md-6 d-flex justify-content-center apartments '>
+                            <h6><a id='link1' href='{$route}' target='_blank'>Perfil Propietario</a></h6>                           
                         </div> 
                  </div> 
 
@@ -80,3 +85,4 @@
         }
         ?>
     </div>
+</div>

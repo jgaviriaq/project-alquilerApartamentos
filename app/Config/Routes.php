@@ -48,7 +48,7 @@ $routes->post('/sesion', 'SesionController::sesion');
 $routes->get('/deleteApartment', 'ListApartmentsController::deleteApartment');
 $routes->POST('/updateApartment', 'ListApartmentsController::updateApartment');
 $routes->POST('/updatePerfil', 'PerfilController::updatePerfil');
-
+$routes->get('/propietario', 'PropietarioController::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

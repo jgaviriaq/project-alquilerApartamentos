@@ -1,26 +1,28 @@
 
-function validarApartamento1() {
-    let cityApartment, countryApartment, addressApartment, imagesapartment, numberRoomsApartment,outstandingimage, nightValueApartment, descriptionApartment, urlregex;
+function validarApartamento1(id) {
+
     
-    countryApartment = document.getElementById("countryApartment").value;
-    cityApartment = document.getElementById("cityApartment").value;
-    addressApartment = document.getElementById("addressApartment").value;
-    numberRoomsApartment = document.getElementById("numberRoomsApartment").value;
-    nightValueApartment = document.getElementById("nightValueApartment").value;
-    descriptionApartment = document.getElementById("descriptionApartment").value;
-    outstandingimage = document.getElementById("outstandingimage").value;
-    imagesapartment = document.getElementById("imagesapartment").value;
+    let cityApartment, countryApartment, addressApartment, imagesapartment, numberRoomsApartment,outstandingimage, nightValueApartment, descriptionApartment, urlregex;
+    console.log(id);
+     countryApartment= document.getElementById("countryApartment"+id).value;
+    cityApartment = document.getElementById("cityApartment"+id).value;
+    addressApartment = document.getElementById("addressApartment"+id).value;
+    numberRoomsApartment = document.getElementById("numberRoomsApartment"+id).value;
+    nightValueApartment = document.getElementById("nightValueApartment"+id).value;
+    descriptionApartment = document.getElementById("descriptionApartment"+id).value;
+    outstandingimage = document.getElementById("outstandingimage"+id).value;
+    imagesapartment = document.getElementById("imagesapartment"+id).value;
     expresion_nombre = /^[a-zA-ZÀ-ÿ\s]{1,40}$/;
     urlregex = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
 
-    
+  
 
     if (cityApartment == '' || countryApartment == '' || addressApartment == '' || numberRoomsApartment == '' || nightValueApartment == '' || descriptionApartment=='') {
-        document.querySelector('#formulario_mensaje ').classList.add('formulario_mensaje-activo');
+        document.querySelector('#formulario_mensaje'+id).classList.add('formulario_mensaje-activo');
         return false
     }
     else {
-        document.querySelector('#formulario_mensaje ').classList.remove('formulario_mensaje-activo');
+        document.querySelector('#formulario_mensaje'+id).classList.remove('formulario_mensaje-activo');
     }
 
 
@@ -90,7 +92,7 @@ function validarApartamento1() {
     else {
         document.querySelector('#grupoImagenes .input_error').classList.remove('input_error-activo');
     }
-
+    
 }
 
 

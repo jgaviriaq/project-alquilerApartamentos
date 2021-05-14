@@ -38,41 +38,42 @@
             </div>
         </div>
     </nav>
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div id="title" class="col-md-7">
             <h1 id="h1">Lista de Apartamentos</h1>
         </div>
         <?php
-        foreach ($registerApartment as $item) {
-            $route = base_url() . "/public/deleteApartment?id={$item->id}";
-            $update = base_url() . "/public/updateApartment?id={$item->id}";
+        for($i=0;$i<count($registerApartment);$i++) {
+            $route = base_url() . "/public/deleteApartment?id={$registerApartment[$i]->id}";
+            $update = base_url() . "/public/updateApartment?id={$registerApartment[$i]->id}";
             $template = "
-    <div class='col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center mt-2 '>    
+    <div class='col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center mt-2'>    
             <div class='card mt-2 me-2' style='width:27rem; border-color:turquoise; border-width:2px'>
-                <img src='{$item->outstandingimage}' class='card-img-top' alt='...'>
+                <img src='{$registerApartment[$i]->outstandingimage}' class='card-img-top' alt='...'>
                 <div class='card-body bg-dark '>
                     <div class='row g-0'>
-                        <div class='col-md-6 d-flex justify-content-center'>
-                            <img style='width: 11rem;' src='{$item->imagesapartment}' class='card-img-top m-0' alt='...'>
+                        <div class='col-md-6 col-sm-12 col-12 d-flex justify-content-center'>
+                            <img style='width:11rem;' src='{$registerApartment[$i]->imagesapartment}' class='card-img-top p-2' alt='...'>
                         </div>
                          <div class='col-md-6 '>
                             <div class='row g-0'>    
                               <div class='col-md-12 listapartments'>
-                                <h6 class='card-text d-flex justify-content-center mt-1'>Pais: {$item->countryapartment}</h6>
-                                <h6 class='card-text d-flex justify-content-center '>Ciudad: {$item->cityapartment}</h6>
-                                <h6 class='card-text d-flex justify-content-center '>Dirección: {$item->addressapartment}</h6>
-                                <h6 class='card-text d-flex justify-content-center '>Habitaciones: {$item->numberrooms}</h6>
-                                <h6 class='card-text d-flex justify-content-center '>Valor Noche: {$item->nightvalue}</h6>
-                                <h6 class='card-text d-flex justify-content-center '><a href='{$item->urlgoogle}'  target='_blank'>Ubicación Google Maps</a></h6>
+                                <h6 class='card-text d-flex justify-content-center mt-1'>Pais: {$registerApartment[$i]->countryapartment}</h6>
+                                <h6 class='card-text d-flex justify-content-center '>Ciudad: {$registerApartment[$i]->cityapartment}</h6>
+                                <h6 class='card-text d-flex justify-content-center '>Dirección: {$registerApartment[$i]->addressapartment}</h6>
+                                <h6 class='card-text d-flex justify-content-center '>Habitaciones: {$registerApartment[$i]->numberrooms}</h6>
+                                <h6 class='card-text d-flex justify-content-center '>Valor Noche: {$registerApartment[$i]->nightvalue}</h6>
+                                <h6 class='card-text d-flex justify-content-center '><a href='{$registerApartment[$i]->urlgoogle}'  target='_blank'>Ubicación Google Maps</a></h6>
                              </div>
                            </div>
                         </div> 
                         <div class='card-body listapartments'>
                             <h6 class='card-title d-flex justify-content-center'>Descripción:</h6>
-                            <p id='description' class='card-text'>{$item->descriptionapartment}</p>
+                            <p id='description' class='card-text'>{$registerApartment[$i]->descriptionapartment}</p>
                              <div class='row'> 
                                <div class= 'col-md-6 d-flex justify-content-center mb-1' >     
-                                    <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#editar{$item->id}'>
+                                    <button type='button' class='btn btn-warning' data-bs-toggle='modal' data-bs-target='#editar{$registerApartment[$i]->id}'>
                                         Edit
                                     </button>
                                </div> 
@@ -85,7 +86,7 @@
                 </div>
             </div>      
       </div>    
-      <div class='modal fade ' id='editar{$item->id}' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+      <div class='modal fade ' id='editar{$registerApartment[$i]->id}' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
          <div class='modal-dialog'>
             <div class='modal-content cont bg-dark text-white'>
                     <div class='modal-header'>
@@ -93,12 +94,12 @@
                         <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                     </div>
             <div class='modal-body'>
-                    <form onsubmit='return validarApartamento1();' action='{$update}'  method='POST'>
+                    <form onsubmit='return validarApartamento1($i);' action='{$update}'  method='POST'>
                             <div id='grupocountry'>
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
                                         <span class='input-group-text'><i class='fas fa-globe'></i></span>
-                                        <input type='text' name='countryApartment' id='countryApartment' class='form-control' value='{$item->countryapartment}'>
+                                        <input type='text' name='countryApartment' id='countryApartment{$i}' class='form-control' value='{$registerApartment[$i]->countryapartment}'>
                                     </div>
                                     <p class='input_error'>El país solo debe tener letras y no ser mayor a 15 caracteres</p>
                                 </div>
@@ -108,7 +109,7 @@
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
                                         <span class='input-group-text' id='inputGroupPrepend'><i class='fas fa-building'></i></span>
-                                        <input type='text' name='cityApartment' id='cityApartment' value='{$item->cityapartment}' class='form-control' >
+                                        <input type='text' name='cityApartment' id='cityApartment{$i}' value='{$registerApartment[$i]->cityapartment}' class='form-control' >
                                     </div>
                                     <p class='input_error'>La ciudad solo debe tener letras y no ser mayor a 20 caracteres</p>
                                 </div>
@@ -119,7 +120,7 @@
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
                                         <span class='input-group-text'><i class='fas fa-map-marker'></i></span>
-                                        <input type='text' name='addressApartment' id='addressApartment'value='{$item->addressapartment}' class='form-control'>
+                                        <input type='text' name='addressApartment' id='addressApartment{$i}'value='{$registerApartment[$i]->addressapartment}' class='form-control'>
                                     </div>
                                     <p class='input_error'>La dirección no debe tener mas de 20 caracteres</p>
                                 </div>
@@ -130,7 +131,7 @@
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
                                         <span class='input-group-text'><i class='fas fa-bed'></i></span>
-                                        <input type='text' name='RoomsApartment' id='numberRoomsApartment' value='{$item->numberrooms}' class='form-control'>
+                                        <input type='text' name='RoomsApartment' id='numberRoomsApartment{$i}' value='{$registerApartment[$i]->numberrooms}' class='form-control'>
                                     </div>
                                     <p class='input_error'>Solo digite numeros, los caracteres no pueden ser mayor a 10 </p>
                                 </div>
@@ -140,7 +141,7 @@
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
                                         <span class='input-group-text' ><i class='fas fa-moon'></i></span>
-                                        <input  type='text' name='nightValueApartment' id='nightValueApartment'  value='{$item->nightvalue}' class='form-control '>
+                                        <input  type='text' name='nightValueApartment' id='nightValueApartment{$i}'  value='{$registerApartment[$i]->nightvalue}' class='form-control '>
                                     </div>
                                     <p class='input_error'>Solo digite numeros, los caracteres no pueden ser mayor a 10</p>
                                 </div>
@@ -150,7 +151,7 @@
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
                                       <span class='input-group-text'><i class='far fa-images'></i></span>
-                                        <input  type='text' name='outstandingimage' id='outstandingimage'  value='{$item->outstandingimage}' class='form-control '>
+                                        <input  type='text' name='outstandingimage' id='outstandingimage{$i}'  value='{$registerApartment[$i]->outstandingimage}' class='form-control '>
                                     </div>
                                     <p class='input_error'>No es un formato de URL</p>
                                 </div>
@@ -160,7 +161,7 @@
                                 <div class='form-groupApartment'>
                                     <div class='input-group has-validation'>
                                       <span class='input-group-text'><i class='far fa-images'></i></span>
-                                        <input  type='text' name='imagesapartment' id='imagesapartment'  value='{$item->imagesapartment}' class='form-control '>
+                                        <input  type='text' name='imagesapartment' id='imagesapartment{$i}'  value='{$registerApartment[$i]->imagesapartment}' class='form-control '>
                                     </div>
                                     <p class='input_error'>No es un formato de URL</p>
                                 </div>
@@ -171,18 +172,18 @@
                                 <div class='form-groupApartment'>
                                     <div>
                                         <span class='input-group-text mb-1 ' id='span'> <i class='fas fa-home'></i>Reseña del Apartamento</span>
-                                        <textarea class='form-control' name='descriptionApartment' id='descriptionApartment' cols='50' rows='3' <p>{$item->descriptionapartment}</textarea>
+                                        <textarea class='form-control' name='descriptionApartment' id='descriptionApartment{$i}' cols='50' rows='3' <p>{$registerApartment[$i]->descriptionapartment}</textarea>
                                     </div>
                                     <p class='input_error'>No puede escribir mas de 500 caracteres</p>
                                 </div>
                             </div>
 
-                            <div class='formulario_mensaje mt-3' id='formulario_mensaje'>
+                            <div class='formulario_mensaje mt-3' id='formulario_mensaje{$i}'>
                                  <p><i class='fas fa-exclamation-triangle'></i> <b>Error:</b> Digite todos los campos</p>
                              </div>
 
                              <div class= 'mt-2 mb-2'>
-                                <button type='submit' name='btnRegistrar' class='btn btn-info'><i class='fas fa-sign-in-alt'></i>Enviar</button>
+                                <button type='submit' name='btnRegistrar' class='btn btn-info'><i class='fas fa-sign-in-alt'></i> Enviar</button>
                              </div>
                  </form>
             </div>
@@ -192,4 +193,5 @@
             echo $template;
         }
         ?>
-    </div>;
+   </div>
+ </div>;
