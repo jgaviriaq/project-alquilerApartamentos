@@ -22,7 +22,7 @@
                         <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/login" target="_blank">Log in</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/salir" target="_blank">Salir</a>
+                        <a class="nav-link active ms-5 " aria-current="page" href="<?php echo base_url() ?>/public/salir">Salir</a>
                     </li>
                 </ul>
             </div>

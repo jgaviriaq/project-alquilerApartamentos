@@ -252,7 +252,7 @@ h2{
     font-size: 12px;
     margin-top: 0;
     margin-bottom: 0;
-    color:springgreen;
+    color:yellow;
    display: none; 
 }
 
@@ -264,11 +264,12 @@ h2{
 .formulario_mensaje{
     height: 45px;
     line-height: 45px;
-    background-color: #f66060;
+    background-color: red;
     padding: 0px 15px;
     border-radius: 3px;
     margin-bottom: 0.6em;
     display: none;
+    color: yellow;
 }
 
 .formulario_mensaje-activo{
