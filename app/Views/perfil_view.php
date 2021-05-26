@@ -71,7 +71,7 @@
 
                     <div class='mb-3' id='grupoFoto'>
                         <div class='form-group'>
-                            <label class='icon'>a</i></label>
+                            <label class='icon'><i class='fas fa-camera'></i></label>
                             <input type='text' name='image' id='profileImage' class='form-control' value='{$item->image}' placeholder='Ingrese foto'>
                         </div>
                         <p class='input_error'>No es una URL válida</p>
